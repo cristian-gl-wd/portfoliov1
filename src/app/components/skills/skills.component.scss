@@ -47,12 +47,12 @@
 
               i {
                 margin-right: 8px;
-                color: var(--color-primary);
+                color: var(--color-primary-hex);
               }
             }
 
             .skill-percentage {
-              color: var(--color-primary);
+              color: var(--color-primary-hex);
               font-weight: var(--font-weight-bold);
             }
           }
@@ -65,7 +65,7 @@
 
             .skill-progress {
               height: 100%;
-              background-color: var(--color-primary);
+              background-color: var(--color-primary-hex);
               border-radius: var(--border-radius-sm);
               transition: width 1s ease-in-out;
             }
@@ -103,9 +103,9 @@
         transition: var(--transition-base);
 
         &:hover {
-          background-color: var(--color-primary);
+          background-color: var(--color-primary-hex);
           color: var(--bg-light);
-          border-color: var(--color-primary);
+          border-color: var(--color-primary-hex);
         }
       }
     }

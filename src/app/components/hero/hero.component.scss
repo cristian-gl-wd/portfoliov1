@@ -74,24 +74,24 @@
         cursor: pointer;
 
         &.primary {
-          background-color: var(--color-primary);
+          background-color: var(--color-primary-hex);
           color: var(--bg-light);
-          border: 2px solid var(--color-primary);
+          border: 2px solid var(--color-primary-hex);
 
           &:hover {
-            background-color: var(--color-primary-dark);
-            border-color: var(--color-primary-dark);
+            background-color: var(--color-secondary-hex);
+            border-color: var(--color-secondary-hex);
           }
         }
 
         &.secondary {
           background-color: transparent;
-          color: var(--color-primary);
-          border: 2px solid var(--color-primary);
+          color: var(--color-primary-hex);
+          border: 2px solid var(--color-primary-hex);
 
           &:hover {
-            background-color: var(--color-primary-dark);
-            border-color: var(--color-primary-dark);
+            background-color: var(--color-secondary-hex);
+            border-color: var(--color-secondary-hex);
             color: var(--bg-light);
           }
         }
@@ -119,7 +119,7 @@
         transition: var(--transition-base);
 
         &:hover {
-          background-color: var(--color-primary);
+          background-color: var(--color-primary-hex);
           color: var(--bg-light);
         }
       }

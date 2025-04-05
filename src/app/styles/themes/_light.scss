@@ -1,7 +1,14 @@
 :root[theme="light"] {
-  /* Colores principales */
-  --color-primary: #16b216;
-  --color-primary-dark: #14a014;
+  /* Colores principal */
+  --color-primary-rgb-code: 22, 178, 22;
+  --color-primary-rgb: rgb(var(--color-primary-rgb-code));
+  --color-primary-hex: #16b216;
+
+  /* Color secundario */
+  --color-secondary-rgb-code: 20, 160, 20;
+  --color-secondary-rgb: rgb(var(--color-secondary-rgb-code));
+  --color-secondary-hex: #14a014;
+  
   --color-secondary: #6c757d;
   --color-success: #28a745;
   --color-danger: #dc3545;

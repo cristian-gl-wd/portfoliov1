@@ -11,7 +11,10 @@
 
         <div class="info-item">
           <span class="label">Name:</span>
-          <span class="value">{{ personalInfo.surname }}, <span class="highlight">{{ personalInfo.name }}</span></span>
+          <span class="value"
+            >{{ personalInfo.surname }},
+            <span class="highlight">{{ personalInfo.name }}</span></span
+          >
         </div>
 
         <div class="info-item">
@@ -21,7 +24,12 @@
 
         <div class="info-item">
           <span class="label">Location:</span>
-          <span class="value">{{ personalInfo.location.city }}, <span class="highlight">{{ personalInfo.location.country }}</span></span>
+          <span class="value"
+            >{{ personalInfo.location.city }},
+            <span class="highlight">{{
+              personalInfo.location.country
+            }}</span></span
+          >
         </div>
 
         <div class="info-item">
@@ -44,35 +52,22 @@
         </div>
 
         <div class="cta">
-          <a href="documents/GarciaLopez_Cristian_CV.pdf.js" download class="btn primary">
-            <i class="fas fa-download"></i> Download CV 
+          <a
+            href="documents/CV_CristianGarciaLopez-FrontEndDeveloperAngular.pdf"
+            download
+            class="btn primary"
+          >
+            <i class="fas fa-download"></i> Download CV
           </a>
         </div>
       </div>
 
       <div class="biography">
         <h3>Who am I?</h3>
-        <p>{{ personalInfo.professionalSummary }}</p>
-
-        <p>
-          Mi enfoque en el desarrollo web se centra en la creación de
-          experiencias de usuario excepcionales a través de interfaces limpias y
-          funcionales. He trabajado en proyectos de diversos sectores, lo que me
-          ha permitido adquirir una amplia perspectiva sobre las necesidades de
-          diferentes tipos de usuarios.
-        </p>
-
-        <p>
-          Me considero un apasionado del aprendizaje continuo, siempre al tanto
-          de las últimas tendencias y mejores prácticas en el mundo del
-          desarrollo. Mi objetivo es seguir creciendo profesionalmente y
-          contribuir a proyectos que generen un impacto positivo.
-        </p>
-
-        <blockquote>
-          "El código es como el humor. Cuando tienes que explicarlo, es malo." –
-          Cory House
-        </blockquote>
+        @for (professionalSummarys of personalInfo.professionalSummarys; track professionalSummarys) {
+          <p>{{ professionalSummarys }}</p>
+          }
+        <blockquote>Loving coffee and code ☕💕</blockquote>
       </div>
     </div>
   </div>

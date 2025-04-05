@@ -23,10 +23,10 @@
     </div>
 
     <div class="projects-grid">
-      @for (project of filteredProjects; track project.id) {
+      @for (project of projectsReverse; track project.id) {
       <div class="project-card">
         <div class="project-image">
-          <img [src]="project.image" [alt]="project.title" />
+          <img [src]="`images/projects/project-${ project.id }.png`" [alt]="project.title" />
           <div class="overlay">
             <div class="buttons">
               @if (project.demoUrl) {
@@ -62,7 +62,7 @@
         target="_blank"
         class="btn primary"
       >
-        <i class="fab fa-github"></i> View more projects on GitHub
+        <i class="fab fa-github"></i> View all my projects on GitHub
       </a>
     </div>
   </div>

@@ -1,5 +1,5 @@
 .highlight {
-  color: var(--color-primary);
+  color: var(--color-primary-hex);
   font-weight: bold;
 }
 
@@ -23,7 +23,7 @@
     .separator {
       width: 80px;
       height: 3px;
-      background-color: var(--color-primary);
+      background-color: var(--color-primary-hex);
       margin: 20px auto 0;
     }
   }
@@ -81,7 +81,7 @@
             display: inline-block;
             padding: 6px 12px;
             font-size: 14px;
-            background-color: var(--color-primary);
+            background-color: var(--color-primary-hex);
             color: #fff;
             border-radius: 20px;
           }
@@ -109,11 +109,11 @@
           }
 
           &.primary {
-            background-color: var(--color-primary);
+            background-color: var(--color-primary-hex);
             color: #fff;
 
             &:hover {
-              background-color: var(--color-primary-dark);
+              background-color: var(--color-secondary-hex);
             }
           }
         }
@@ -140,14 +140,14 @@
       blockquote {
         padding: 20px;
         background-color: #f0f4f8;
-        border-left: 3px solid var(--color-primary);
-        font-style: italic;
+        border-left: 3px solid var(--color-primary-hex);
+        // font-style: italic;
         margin: 30px 0;
 
         &:before {
           content: "\201C";
           font-size: 30px;
-          color: var(--color-primary);
+          color: var(--color-primary-hex);
           margin-right: 5px;
         }
       }

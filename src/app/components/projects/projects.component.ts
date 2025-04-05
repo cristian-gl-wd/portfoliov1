@@ -5,7 +5,6 @@ interface Project {
   id: number;
   title: string;
   description: string;
-  image: string;
   technologies: string[];
   demoUrl?: string;
   repoUrl?: string;
@@ -23,67 +22,39 @@ export class ProjectsComponent {
   projects: Project[] = [
     {
       id: 1,
-      title: 'Dashboard de Analítica',
+      title: 'GIF search app',
       description:
-        'Aplicación de dashboard para visualización de datos de analítica con gráficos interactivos y filtros avanzados.',
-      image: 'assets/images/projects/project1.jpg',
-      technologies: ['Angular', 'TypeScript', 'RxJS', 'Chart.js', 'SCSS'],
-      demoUrl: 'https://demo.example.com/project1',
-      repoUrl: 'https://github.com/yourusername/analytics-dashboard',
-      featured: true,
+        'GIF search application that allows users to search and view GIFs from the Giphy API.',
+      technologies: ['Angular', 'TypeScript', 'RxJS', 'RestAPI'],
+      repoUrl: 'https://github.com/cristian-gl-wd/gif-searcher',
     },
     {
       id: 2,
-      title: 'Plataforma E-learning',
+      title: 'Country information search app',
       description:
-        'Plataforma de cursos online con sistema de gestión de contenido, progreso de estudiantes y evaluaciones.',
-      image: 'assets/images/projects/project2.jpg',
-      technologies: ['Angular', 'Node.js', 'Express', 'MongoDB', 'JWT'],
-      demoUrl: 'https://demo.example.com/project2',
-      repoUrl: 'https://github.com/yourusername/elearning-platform',
+        'Discover countries you never learned about in school! Concise info (size, pop., capital) to broaden your world view.',
+      technologies: ['Angular', 'TypeScript', 'RxJS', 'RestAPI', 'PrimeNG'],
+      repoUrl: 'https://github.com/cristian-gl-wd/country-app',
+      featured: true,
     },
     {
       id: 3,
-      title: 'App de Gestión de Tareas',
+      title: 'Superhero app',
       description:
-        'Aplicación para la gestión de tareas con funcionalidades de organización, recordatorios y colaboración en equipo.',
-      image: 'assets/images/projects/project3.jpg',
-      technologies: ['Angular', 'Firebase', 'RxJS', 'NgRx'],
-      demoUrl: 'https://demo.example.com/project3',
-      repoUrl: 'https://github.com/yourusername/task-management-app',
+        'Build and manage your own superhero universe. Define powers, edit profiles, and organize your personal justice league.',
+      technologies: ['Angular', 'TypeScript', 'RxJS', 'Angular Material', 'Test'],
+      repoUrl: 'https://github.com/cristian-gl-wd/superheroes',
       featured: true,
     },
     {
       id: 4,
-      title: 'Catálogo de Productos',
+      title: 'Portfolio (V1)',
       description:
-        'Catálogo digital con sistema de búsqueda, filtrado y carrito de compras para una tienda online.',
-      image: 'assets/images/projects/project4.jpg',
-      technologies: ['Angular', 'REST API', 'SCSS', 'Bootstrap'],
-      demoUrl: 'https://demo.example.com/project4',
-      repoUrl: 'https://github.com/yourusername/product-catalog',
-    },
-    {
-      id: 5,
-      title: 'Portfolio Personal',
-      description:
-        'Website de portfolio personal desarrollado con Angular utilizando componentes standalone.',
-      image: 'assets/images/projects/project5.jpg',
-      technologies: ['Angular', 'TypeScript', 'SCSS', 'Standalone Components'],
-      demoUrl: 'https://yourportfolio.com',
-      repoUrl: 'https://github.com/yourusername/personal-portfolio',
+        'Explore my coding journey and projects. See my skills in action and discover how I can contribute to your next development endeavor.',
+      technologies: ['Angular', 'TypeScript', 'SCSS'],
+      repoUrl: 'https://github.com/cristian-gl-wd/portfoliov1',
       featured: true,
-    },
-    {
-      id: 6,
-      title: 'Aplicación de Clima',
-      description:
-        'Aplicación de pronóstico del tiempo que muestra información meteorológica en tiempo real y previsiones.',
-      image: 'assets/images/projects/project6.jpg',
-      technologies: ['Angular', 'OpenWeather API', 'RxJS', 'SCSS'],
-      demoUrl: 'https://demo.example.com/project6',
-      repoUrl: 'https://github.com/yourusername/weather-app',
-    },
+    }
   ];
 
   activeFilter: string = 'all';
@@ -97,5 +68,9 @@ export class ProjectsComponent {
 
   setFilter(filter: string): void {
     this.activeFilter = filter;
+  }
+
+  get projectsReverse(): Project[] {
+    return [...this.projects].reverse();
   }
 }
