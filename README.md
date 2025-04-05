@@ -1,59 +1,62 @@
-# Portafolio
+# My Personal Portfolio - Version 1.0
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.0.
+[![Angular](https://img.shields.io/badge/Angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white)](https://angular.io/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-%23007ACC.svg?style=for-the-badge&logo=angular&logoColor=white)](https://www.typescriptlang.org/)
+[![Sass](https://img.shields.io/badge/Sass-%23CC6699.svg?style=for-the-badge&logo=sass&logoColor=white)](https://sass-lang.com/)
+[![HTML5](https://img.shields.io/badge/HTML5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/es/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/es/docs/Web/CSS)
 
-## Development server
+This repository contains the first version of my personal portfolio, developed with Angular and styled with SCSS. The main goal of this project is to present my professional information and skills in an attractive and accessible way.
 
-To start a local development server, run:
+## Content
 
-```bash
-ng serve
-```
+The portfolio is structured in the following sections:
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+-   **Home:** Main page with a personal introduction.
+-   **About me:** Personal and professional information about me.
+-   **Skills:** Showcase of my technical skills and competencies.
+-   **Experience:** Details of my academic and work background.
+-   **Projects:** Collection of the projects I have worked on.
+-   **Contact:** Contact information and message form.
 
-## Code scaffolding
+## Technologies Used
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+This project has been developed using the following main technologies:
 
-```bash
-ng generate component component-name
-```
+-   **[Angular](https://angular.io/):** Google's web development framework.
+-   **[TypeScript](https://www.typescriptlang.org/):** Superset of JavaScript with static typing.
+-   **[SCSS](https://sass-lang.com/):** CSS preprocessor.
+-   **HTML:** Markup language for web structure.
+-   **CSS:** Stylesheet language for visual design.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## How to Run the Project Locally
 
-```bash
-ng generate --help
-```
+If you want to run this project locally:
 
-## Building
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/cristian-gl-wd/portfoliov1.git
+    cd portfoliov1
+    ```
+2.  Install dependencies:
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+3.  Start the development server:
+    ```bash
+    ng serve -o
+    # or
+    npm start
+    # or
+    yarn start
+    ```
 
-To build the project run:
+## Author
 
-```bash
-ng build
-```
+Cristian López García
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+-   [GitHub](https://github.com/cristian-gl-wd/)
+-   [LinkedIn](https://www.linkedin.com/in/cristian-gl-wd/)
+-   cristian.glwd@gmail.com
