@@ -1,0 +1,51 @@
+<section class="skills-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>My skills</h2>
+      <div class="separator"></div>
+    </div>
+
+    <div class="skills-container">
+      @for (category of skillCategories; track category.name) {
+      <div class="skills-category">
+        <h3>{{ category.name }}</h3>
+
+        <div class="skills-list">
+          @for (skill of category.skills; track skill.name) {
+          <div class="skill-item">
+            <div class="skill-info">
+              <span class="skill-name">
+                @if (skill.icon) {
+                <i class="{{ skill.icon }}"></i>
+                }
+                {{ skill.name }}
+              </span>
+              <span class="skill-percentage">{{ skill.level }}%</span>
+            </div>
+
+            <div class="skill-bar">
+              <div class="skill-progress" [style.width.%]="skill.level"></div>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+      }
+    </div>
+
+    <div class="additional-skills">
+      <h3>Additional competences</h3>
+
+      <div class="badges">
+        <span class="badge">Teamwork</span>
+        <span class="badge">Troubleshooting</span>
+        <span class="badge">Project management</span>
+        <span class="badge">Agile methodologies</span>
+        <span class="badge">Effective communication</span>
+        <span class="badge">Adaptability</span>
+        <span class="badge">Attention to details</span>
+        <span class="badge">Analytical skills</span>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,69 @@
+<section class="projects-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>My projects</h2>
+      <div class="separator"></div>
+    </div>
+
+    <div class="filters">
+      <button
+        class="filter-btn"
+        [class.active]="activeFilter === 'all'"
+        (click)="setFilter('all')"
+      >
+        All
+      </button>
+      <button
+        class="filter-btn"
+        [class.active]="activeFilter === 'featured'"
+        (click)="setFilter('featured')"
+      >
+        Featured
+      </button>
+    </div>
+
+    <div class="projects-grid">
+      @for (project of filteredProjects; track project.id) {
+      <div class="project-card">
+        <div class="project-image">
+          <img [src]="project.image" [alt]="project.title" />
+          <div class="overlay">
+            <div class="buttons">
+              @if (project.demoUrl) {
+              <a [href]="project.demoUrl" target="_blank" class="btn">
+                <i class="fas fa-external-link-alt"></i> Demo
+              </a>
+              } @if (project.repoUrl) {
+              <a [href]="project.repoUrl" target="_blank" class="btn">
+                <i class="fab fa-github"></i> Code
+              </a>
+              }
+            </div>
+          </div>
+        </div>
+
+        <div class="project-info">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-description">{{ project.description }}</p>
+
+          <div class="project-technologies">
+            @for (tech of project.technologies; track tech) {
+            <span class="technology-tag">{{ tech }}</span>
+            }
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+
+    <div class="more-projects">
+      <a
+        href="https://www.linkedin.com/in/cristian-gl-wd/"
+        target="_blank"
+        class="btn primary"
+      >
+        <i class="fab fa-github"></i> View more projects on GitHub
+      </a>
+    </div>
+  </div>
+</section>

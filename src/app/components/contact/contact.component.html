@@ -1,0 +1,162 @@
+<section class="contact-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Contact</h2>
+      <div class="separator"></div>
+    </div>
+
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Contact information</h3>
+
+        <div class="info-list">
+          @for (info of contactInfo; track info.title) {
+          <div class="info-item">
+            <div class="icon">
+              <i class="{{ info.icon }}"></i>
+            </div>
+            <div class="details">
+              <h4>{{ info.title }}</h4>
+              @if (info.link) {
+              <a [href]="info.link">{{ info.value }}</a>
+              } @else {
+              <p>{{ info.value }}</p>
+              }
+            </div>
+          </div>
+          }
+        </div>
+
+        <div class="social-links">
+          <h4>Follow me</h4>
+          <div class="links">
+            <a
+              href="https://github.com/yourusername"
+              target="_blank"
+              aria-label="GitHub"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://linkedin.com/in/yourusername"
+              target="_blank"
+              aria-label="LinkedIn"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+              href="https://twitter.com/yourusername"
+              target="_blank"
+              aria-label="Twitter"
+            >
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a
+              href="https://medium.com/@yourusername"
+              target="_blank"
+              aria-label="Medium"
+            >
+              <i class="fab fa-medium"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3>Send me a message</h3>
+
+        @if (formSuccess) {
+        <div class="success-message">
+          <i class="fas fa-check-circle"></i>
+          <p>
+            Your message has been sent successfully, thank you for contacting
+            me!
+          </p>
+        </div>
+        } @else {
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              formControlName="name"
+              placeholder="Who send the mesagge?"
+              [class.invalid]="submitted && formControls['name'].errors"
+            />
+            @if (submitted && formControls['name'].errors) {
+            <div class="error-message">
+              @if (formControls['name'].errors['required']) {
+              <span>The name is mandatory</span>
+              } @else if (formControls['name'].errors['minlength']) {
+              <span>The name must have at least 3 characters</span>
+              }
+            </div>
+            }
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              formControlName="email"
+              placeholder="Where can I reach you?"
+              [class.invalid]="submitted && formControls['email'].errors"
+            />
+            @if (submitted && formControls['email'].errors) {
+            <div class="error-message">
+              @if (formControls['email'].errors['required']) {
+              <span>The email is mandatory</span>
+              } @else if (formControls['email'].errors['email']) {
+              <span>Invalid email</span>
+              }
+            </div>
+            }
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input
+              type="text"
+              id="subject"
+              formControlName="subject"
+              placeholder="What are you contacting us about?"
+              [class.invalid]="submitted && formControls['subject'].errors"
+            />
+            @if (submitted && formControls['subject'].errors) {
+            <div class="error-message">
+              <span>The subject is mandatory</span>
+            </div>
+            }
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              formControlName="message"
+              placeholder="What do you want to say?"
+              rows="5"
+              [class.invalid]="submitted && formControls['message'].errors"
+            ></textarea>
+            @if (submitted && formControls['message'].errors) {
+            <div class="error-message">
+              @if (formControls['message'].errors['required']) {
+              <span>The message is mandatory</span>
+              } @else if (formControls['message'].errors['minlength']) {
+              <span>The message must be at least 10 characters long</span>
+              }
+            </div>
+            }
+          </div>
+
+          <button type="submit" class="btn primary">
+            <i class="fas fa-paper-plane"></i> Send message
+          </button>
+        </form>
+        }
+      </div>
+    </div>
+  </div>
+</section>

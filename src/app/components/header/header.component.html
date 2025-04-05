@@ -1,0 +1,26 @@
+<header [class.scrolled]="activeSection !== 'home'">
+  <div class="container">
+    <div class="logo">
+      <a (click)="scrollTo('home')">Cristian's portfolio</a>
+    </div>
+
+    <button class="menu-toggle" (click)="toggleMenu()" aria-label="Toggle menu">
+      <span [class.active]="menuOpen"></span>
+    </button>
+
+    <nav [class.open]="menuOpen">
+      <ul>
+        @for (item of navItems; track item.id) {
+        <li>
+          <a
+            (click)="scrollTo(item.id)"
+            [class.active]="activeSection === item.id"
+          >
+            {{ item.label }}
+          </a>
+        </li>
+        }
+      </ul>
+    </nav>
+  </div>
+</header>

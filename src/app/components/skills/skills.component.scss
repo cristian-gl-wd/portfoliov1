@@ -1,0 +1,113 @@
+.skills-section {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+
+    h2 {
+      font-size: 36px;
+      font-weight: var(--font-weight-bold);
+      color: var(--text-dark);
+    }
+  }
+
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-bottom: var(--spacing-xl);
+
+    .skills-category {
+      h3 {
+        font-size: 24px;
+        font-weight: var(--font-weight-medium);
+        margin-bottom: var(--spacing-md);
+        color: var(--text-dark);
+        padding-bottom: 10px;
+        border-bottom: 2px solid #eee;
+      }
+
+      .skills-list {
+        .skill-item {
+          margin-bottom: 20px;
+
+          .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+
+            .skill-name {
+              font-weight: var(--font-weight-medium);
+              color: var(--text-medium);
+
+              i {
+                margin-right: 8px;
+                color: var(--color-primary);
+              }
+            }
+
+            .skill-percentage {
+              color: var(--color-primary);
+              font-weight: var(--font-weight-bold);
+            }
+          }
+
+          .skill-bar {
+            height: 8px;
+            background-color: #eee;
+            border-radius: var(--border-radius-sm);
+            overflow: hidden;
+
+            .skill-progress {
+              height: 100%;
+              background-color: var(--color-primary);
+              border-radius: var(--border-radius-sm);
+              transition: width 1s ease-in-out;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .additional-skills {
+    text-align: center;
+
+    h3 {
+      font-size: 24px;
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--spacing-md);
+      color: var(--text-dark);
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+
+      .badge {
+        display: inline-block;
+        padding: 8px 16px;
+        font-size: 14px;
+        font-weight: var(--font-weight-medium);
+        color: var(--text-medium);
+        background-color: #f0f4f8;
+        border-radius: 20px;
+        border: 1px solid #e0e6ed;
+        transition: var(--transition-base);
+
+        &:hover {
+          background-color: var(--color-primary);
+          color: var(--bg-light);
+          border-color: var(--color-primary);
+        }
+      }
+    }
+  }
+}

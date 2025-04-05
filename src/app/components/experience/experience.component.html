@@ -1,0 +1,103 @@
+<section class="experience-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Experience and education</h2>
+      <div class="separator"></div>
+    </div>
+
+    <div class="tabs">
+      <button
+        class="tab-btn"
+        [class.active]="activeTab === 'work'"
+        (click)="setActiveTab('work')"
+      >
+        <i class="fas fa-briefcase"></i> Work experience
+      </button>
+      <button
+        class="tab-btn"
+        [class.active]="activeTab === 'education'"
+        (click)="setActiveTab('education')"
+      >
+        <i class="fas fa-graduation-cap"></i> Academic background
+      </button>
+    </div>
+
+    <div class="tab-content">
+      @if (activeTab === 'work') {
+      <div class="timeline">
+        @for (experience of workExperiences; track experience.id) {
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>{{ experience.position }}</h3>
+              <!-- <span class="period">{{ experience.period }}</span> -->
+            </div>
+
+            <div class="company-info">
+              <span class="company">{{ experience.company }}</span>
+              <span class="location"
+                ><i class="fas fa-map-marker-alt"></i>
+                {{ experience.location }}</span
+              >
+            </div>
+
+            <div class="description">
+              <ul>
+                @for (item of experience.description; track item) {
+                <li>{{ item }}</li>
+                }
+              </ul>
+            </div>
+
+            <div class="technologies">
+              @for (tech of experience.technologies; track tech) {
+              <span class="technology-tag">{{ tech }}</span>
+              }
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+      } @if (activeTab === 'education') {
+      <div class="timeline">
+        @for (education of educationHistory; track education.id) {
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>{{ education.degree }}</h3>
+            </div>
+            
+            <div class="company-info">
+              <div class="location">
+                <span class="company">
+                  <i class="fas fa-graduation-cap"></i>
+                  {{ education.institution }}
+                </span>
+                <span class="place">
+                  <i class="fas fa-map-marker-alt"></i>
+                  {{ education.location.city }},
+                  <span class="highlight">
+                    {{ education.location.country }}
+                  </span>
+                </span>
+              </div>
+              <div class="period">
+                <span>{{ education.from }} - {{ education.to }}</span>
+              </div>
+            </div>
+
+            @if (education.description) {
+            <div class="description">
+              <p>{{ education.description }}</p>
+            </div>
+            }
+          </div>
+        </div>
+        }
+      </div>
+      }
+    </div>
+  </div>
+</section>
